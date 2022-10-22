@@ -9,7 +9,7 @@ func RunCron(conf *Config) {
 	c := cron.New()
 	var err error
 	for _, event := range conf.Events {
-		fmt.Println("添加定时任务", event.Spec, event.Cron)
+		fmt.Println("添加定时任务\n", event.Spec, event.Cron)
 		_, err = c.AddFunc(event.Cron, func() {
 			conf.Mail.SendMail(event.Spec, "")
 		})

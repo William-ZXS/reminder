@@ -47,6 +47,9 @@ func InitConfig(file string) *Config {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("conf:%+v", *conf)
+	for _, e := range conf.Events {
+		fmt.Printf("event:%+v\n", e)
+	}
+	fmt.Printf("mail:%+v\n", conf.Mail)
 	return conf
 }
