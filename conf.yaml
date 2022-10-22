@@ -1,0 +1,11 @@
+events:
+  - spec: 妈妈生日
+    cron: 0 9 9 * *
+
+mail:
+  host: smtp.163.com
+  port: 25
+  user: ********@163.com
+  pwd: *********
+  receiver:
+    - *******@163.com
