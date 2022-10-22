@@ -1,6 +1,10 @@
 package main
 
+import "flag"
+
 func main() {
-	conf := InitConfig()
+	confFile := flag.String("f", "config.yaml", "请指定配置文件")
+	flag.Parse()
+	conf := InitConfig(*confFile)
 	RunCron(conf)
 }

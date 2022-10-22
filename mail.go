@@ -7,7 +7,7 @@ import (
 func (r Mail) SendMail(subject string, body string) error {
 	m := gomail.NewMessage()
 	// 这种方式可以添加别名，即 nickname， 也可以直接用<code>m.SetHeader("From", MAIL_USER)</code>
-	nickname := ""
+	nickname := "家庭助手:"
 	m.SetHeader("From", nickname+"<"+r.User+">")
 	// 发送给多个用户
 	m.SetHeader("To", r.Receiver...)

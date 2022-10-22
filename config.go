@@ -23,11 +23,20 @@ type Mail struct {
 	Receiver []string
 }
 
-func InitConfig() *Config {
-	viper.SetConfigName("config") // name of config file (without extension)
-	viper.AddConfigPath(".")      // optionally look for config in the working directory
-	err := viper.ReadInConfig()   // Find and read the config file
-	if err != nil {               // Handle errors reading the config file
+//func (c Config) String() string {
+//	msg := ""
+//	for _, e := range c.Events {
+//		msg +=
+//	}
+//}
+
+func InitConfig(file string) *Config {
+	if file == "" {
+		file = "./config.yaml"
+	}
+	viper.SetConfigFile(file)
+	err := viper.ReadInConfig() // Find and read the config file
+	if err != nil {             // Handle errors reading the config file
 		panic(fmt.Errorf("fatal error config file: %w", err))
 	}
 
@@ -38,6 +47,6 @@ func InitConfig() *Config {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("conf:", *conf)
+	fmt.Printf("conf:%+v", *conf)
 	return conf
 }
