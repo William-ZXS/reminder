@@ -1,2 +1,2 @@
 # reminder
-remind import events, like family`s birthday
+remind important events, like family`s birthday
