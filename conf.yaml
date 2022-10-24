@@ -1,6 +1,6 @@
 events:
   - spec: 妈妈生日
-    cron: 0 9 9 * *
+    cron: "0 9 9 * *"
 
 mail:
   host: smtp.163.com
